@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import auth from "../../firebase.init";
 import useAdmin from "../hooks/useAdmin";
+import img from '../image/pap-2.png'
 
 const Navbar = ({ children }) => {
   const [dark, setDark] = useState(false);
@@ -45,7 +46,7 @@ const Navbar = ({ children }) => {
               </svg>
             </label>
           )}
-          <div class='flex-1 px-2 mx-2 text-2xl font-bold'>My Services</div>
+          <div class='flex-1 px-2 mx-2 text-2xl font-bold'>My Services <span className="pl-4"><img width="70px" src={img} alt="" /></span></div>
           <div class='flex-none lg:hidden'>
             <label for='my-drawer-3' class='btn btn-square btn-ghost'>
               <svg
@@ -73,7 +74,7 @@ const Navbar = ({ children }) => {
               </li>
               {admin && (
                 <li>
-                  <NavLink to='/dashboard' className='rounded-lg'>
+                  <NavLink to='/deshboard' className='rounded-lg'>
                     Dashboard
                   </NavLink>
                 </li>
