@@ -1,0 +1,51 @@
+[
+    {
+        "_id": 1,
+        "name": "Bearing",
+        "img": "https://ibb.co/Fgw3Kx8",
+        "imges": "../src/components/image/1-Motor-bearings.png",
+        "descrription": "Each RID Contracting State shall retain the right to regulate or prohibit",
+        "qunatity": "200",
+        "price": "500"
+    },
+    {
+        "_id": 2,
+        "name": "Car all Equipment",
+        "img": "https://ibb.co/FWM3bwk",
+        "descrription": "The carriage to which this Regulation applies shall remain subject to the national",
+        "qunatity": "220",
+        "price": "900"
+    },
+    {
+        "_id": 3,
+        "name": "Car all Body",
+        "img": "https://ibb.co/93RK8xV",
+        "descrription": "dangerous goods which are acceptable for carriage in accordance with the Annex complying with the rele",
+        "qunatity": "180",
+        "price": "1200"
+    },
+    {
+        "_id": 4,
+        "name": "Injil Eqipment",
+        "img": "https://ibb.co/SB8F5Qp",
+        "descrription": "",
+        "qunatity": "50",
+        "price": "700"
+    },
+    {
+        "_id": 5,
+        "name": "Motor-bearings",
+        "img": "https://ibb.co/NND0XSg",
+        "descrription": "C reproduced above is referred to, reference will be made specifically",
+        "qunatity": "150",
+        "price": "900"
+    },
+    {
+        "_id": 6,
+        "name": "Cars Soft-set",
+        "img": "https://ibb.co/qnHZ5s7",
+        "descrription": "This Regulation shall not apply, in whole or in part, to the carriage of dangerous goods for which an exemption",
+        "qunatity": "100",
+        "price": "1500"
+    }
+]
