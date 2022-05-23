@@ -34,11 +34,12 @@ const SignUp = () => {
         console.log(user || gUser);
     }
 
+    
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
         console.log('update done');
-        navigate('/appointment');
+        navigate('/');
     }
     return (
         <div className='flex h-screen justify-center items-center mt-16 mb-10'>

@@ -3,9 +3,6 @@ import React from "react";
 const Footer = () => {
   return (
     <footer
-      // style={{
-      //   background: `url(${footer})`,
-      // }}
       className=""
     >
       <div className="footer p-6">

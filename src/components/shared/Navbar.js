@@ -4,7 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import auth from "../../firebase.init";
-import useAdmin from "../hooks/useAdmin";
+// import useAdmin from "../hooks/useAdmin";
 import img from '../image/pap-2.png'
 
 const Navbar = ({ children }) => {
@@ -17,7 +17,7 @@ const Navbar = ({ children }) => {
     signOut(auth);
 };
 
-  const [admin] = useAdmin();
+  // const [admin] = useAdmin();
 
   return (
     <div class='drawer  drawer-end' data-theme={dark ? "dark" : "light"}>
@@ -72,7 +72,7 @@ const Navbar = ({ children }) => {
                   Home
                 </NavLink>
               </li>
-              {admin && (
+              {user && (
                 <li>
                   <NavLink to='/deshboard' className='rounded-lg'>
                     Dashboard
@@ -127,16 +127,23 @@ const Navbar = ({ children }) => {
               Home
             </NavLink>
           </li>
+          {user && (
+                <li>
+                  <NavLink to='/deshboard' className='rounded-lg'>
+                    Dashboard
+                  </NavLink>
+                </li>
+              )}
           <li>
             <NavLink to='/about' className='rounded-lg'>
               About
             </NavLink>
           </li>
           <li>
-            <NavLink to='/services' className='rounded-lg'>
-              Services
-            </NavLink>
-          </li>
+               <NavLink to='/blogs' className='rounded-lg'>
+                Blogs
+                </NavLink>
+              </li>
           <li>
             <NavLink to='/contact' className='rounded-lg'>
               Contact

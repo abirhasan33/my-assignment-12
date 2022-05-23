@@ -1,6 +1,5 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import Footer from './components/shared/Footer';
 import Navbar from './components/shared/Navbar';
 import About from './components/pages/About/About';
 import Login from './components/pages/Login/Login';
@@ -10,6 +9,11 @@ import NotFound from './components/NotFound/NotFound';
 import Blogs from './components/pages/Blogs/Blogs';
 import RequireAuth from './components/pages/Login/ReqireAuth';
 import Dashboard from './components/pages/Dashboard/Dashboard';
+import AddAReview from './components/pages/Dashboard/AddAReview';
+import MyOrders from './components/pages/Dashboard/MyOrders';
+import Inventory from './components/pages/Home/Inventory';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -22,14 +26,20 @@ function App() {
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
+        <Route path='/inventory/:serviceId' element={<RequireAuth>
+          <Inventory></Inventory>
+        </RequireAuth>}></Route>
         <Route path='/deshboard' element={<RequireAuth>
           <Dashboard></Dashboard>
-        </RequireAuth>}></Route>
+        </RequireAuth>}>
+        <Route index element={<AddAReview></AddAReview>}></Route>
+        <Route path='order' element={<MyOrders></MyOrders>}></Route>
+        </Route>
 
 
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
-      <Footer></Footer>
+      <ToastContainer></ToastContainer>
       </Navbar>
     </div>
   );
