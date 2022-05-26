@@ -1,12 +1,11 @@
 import React from "react";
-import https://guarded-refuge-32359.herokuapp.com/ from "../../image/https://guarded-refuge-32359.herokuapp.com/.jpg";
 
 const Input = () => {
   return (
     <div
-      style={{
-        background: `url(${https://guarded-refuge-32359.herokuapp.com/})`,
-      }}
+      // style={{
+      //   background: `url(${https://guarded-refuge-32359.herokuapp.com/})`,
+      // }}
       className="mx-12 text-center pb-10"
     >
       <h2 className="text-xl text-primary font-bold pt-10">contact us</h2>
