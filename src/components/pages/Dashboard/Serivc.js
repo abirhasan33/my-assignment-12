@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Infofmson = ({serivces}) => {
+const Serivc = ({serivces}) => {
     console.log(serivces);
     const {img} = serivces; 
     return (
@@ -10,4 +10,4 @@ const Infofmson = ({serivces}) => {
     );
 };
 
-export default Infofmson;
+export default Serivc;
