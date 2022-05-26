@@ -7,7 +7,7 @@ const Order = () => {
 
    const [users, setUser, isLoading, refetch] = useState([]);
    useEffect(()=> {
-       fetch('http://localhost:5000/user', {
+       fetch('https://guarded-refuge-32359.herokuapp.com/user', {
         method: "GET",
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}` 

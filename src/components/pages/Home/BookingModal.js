@@ -21,7 +21,7 @@ const BookingModal = ({  order, setOrder }) => {
             phone: event.target.phone.value
         }
 
-        fetch('http://localhost:5000/booking', {
+        fetch('https://guarded-refuge-32359.herokuapp.com/booking', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

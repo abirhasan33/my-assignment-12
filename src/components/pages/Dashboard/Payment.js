@@ -13,7 +13,7 @@ const Payment = () => {
     const [order, setOrder, isLoading] = useState({});
 
     useEffect(() => {
-            fetch(`http://localhost:5000/booking/${id}`, {
+            fetch(`https://guarded-refuge-32359.herokuapp.com/booking/${id}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

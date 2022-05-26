@@ -12,7 +12,7 @@ const Inventory = () => {
     const [quantityUpodet, setQuantityUodet] = useState();
 
     useEffect( () =>{
-        const url = `http://localhost:5000/service/${serviceId}`;
+        const url = `https://guarded-refuge-32359.herokuapp.com/service/${serviceId}`;
         console.log(url);
         fetch(url)
         .then(res=> res.json())
@@ -26,7 +26,7 @@ const Inventory = () => {
 
     const quantityUpdete = ()=>{
         const quantity = parseInt(quantityUpodet);
-        const url = `http://localhost:5000/service/${serviceId}`
+        const url = `https://guarded-refuge-32359.herokuapp.com/service/${serviceId}`
         fetch(url, {
         method: 'PUT',
         body: JSON.stringify({
@@ -47,7 +47,7 @@ const Inventory = () => {
 
     const quantityAdd = ()=>{
         const quantity = parseInt(quantityUpodet);
-        const url = `http://localhost:5000/service/${serviceId}`
+        const url = `https://guarded-refuge-32359.herokuapp.com/service/${serviceId}`
         fetch(url, {
         method: 'PUT',
         body: JSON.stringify({

@@ -10,7 +10,7 @@ const Services = () => {
     const [order, setOrder] = useState(null);
 
     useEffect(()=> {
-        fetch('http://localhost:5000/service')
+        fetch('https://guarded-refuge-32359.herokuapp.com/service')
         .then(res => res.json())
         .then(data => setServices(data));
     },[setServices])

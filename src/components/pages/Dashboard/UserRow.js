@@ -8,7 +8,7 @@ const UserRow = ({user, setUser, refetch}) => {
   const handleDelete = id =>{
     const proceed = window.confirm('Are you sure?');
     if(proceed){
-        const url = `http://localhost:5000/user/${id}`;
+        const url = `https://guarded-refuge-32359.herokuapp.com/user/${id}`;
         console.log(url);
         fetch(url, {
             method: 'DELETE'
@@ -23,7 +23,7 @@ const UserRow = ({user, setUser, refetch}) => {
 }
 
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://guarded-refuge-32359.herokuapp.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

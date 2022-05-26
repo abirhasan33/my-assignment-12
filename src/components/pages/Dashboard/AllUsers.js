@@ -12,7 +12,7 @@ const AllUsers = () => {
 
   useEffect(() => {
       if (user) {
-          fetch(`http://localhost:5000/available?patient=${user.email}`, {
+          fetch(`https://guarded-refuge-32359.herokuapp.com/available?patient=${user.email}`, {
               method: 'GET',
               headers: {
                   'authorization': `Bearer ${localStorage.getItem('accessToken')}`
