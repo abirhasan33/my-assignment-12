@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Service = ({ services, setOrder }) => {
-  const { _id, name, img, descrription, quantity, price } = services;
+  const { _id, name, img, descrription, quantity, price, availableQuantity } = services;
 
   const nevigate = useNavigate();
   const navigetToServiseDetail = (id) => {
@@ -23,15 +23,25 @@ const Service = ({ services, setOrder }) => {
       <div class="m-10">
         <h2 class="text-2xl font-bold mb-2">{name}</h2>
         <p className="">Descrription: {descrription}</p>
-        <p className="text-xl font-bold mt-2 mb-2">quantity: {quantity}</p>
-        <p className="text-xl font-bold">Price: {price}</p>
+        <p className="text-ml font-bold mb">AvailableQuantity: {availableQuantity}</p>
+        <p className="text-ml font-bold mt-2 mb-2">Quantity: {quantity}</p>
+        <p className="text-ml font-bold">Price: {price}</p>
         <div class="items-center text-center mt-4">
           <button
             onClick={() => navigetToServiseDetail(_id)}
-            className="btn btn-primary fonnt-bold uppercase text-white bg-gradient-to-r from-secondary to-primary px-10"
+            className="btn btn-primary fonnt-bold uppercase text-white bg-gradient-to-r from-secondary to-primary px-16"
+          >
+            updete
+          </button>
+          <div className="card-actions justify-center">
+          <label
+            for="booking-modal"
+            onClick={() => setOrder(services)}
+            className="btn px-11 mt-3 btn-primary text-white bg-gradient-to-r from-secondary to-primary"
           >
             place order
-          </button>
+          </label>
+          </div>
         </div>
       </div>
     </div>

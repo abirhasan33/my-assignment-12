@@ -14,6 +14,9 @@ import MyOrders from './components/pages/Dashboard/MyOrders';
 import Inventory from './components/pages/Home/Inventory';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import AllUsers from './components/pages/Dashboard/AllUsers';
+import Order from './components/pages/Dashboard/Order';
+import Payment from './components/pages/Dashboard/Payment';
 
 function App() {
   return (
@@ -32,7 +35,10 @@ function App() {
         <Route path='/deshboard' element={<RequireAuth>
           <Dashboard></Dashboard>
         </RequireAuth>}>
-        <Route index element={<AddAReview></AddAReview>}></Route>
+        <Route index element={<AllUsers></AllUsers>}></Route>
+        <Route path='review' element={<AddAReview></AddAReview>}></Route>
+        <Route path='user' element={<Order></Order>}></Route>
+        <Route path='payment/:id' element={<Payment></Payment>}></Route>
         <Route path='order' element={<MyOrders></MyOrders>}></Route>
         </Route>
 

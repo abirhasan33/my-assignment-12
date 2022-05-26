@@ -5,6 +5,7 @@ import img2 from "../../image/phone.png";
 import img3 from "../../image/location.png";
 import Aboutinfo from './Aboutinfo';
 import Infofmson from './Infofmson';
+import Footer from '../../shared/Footer';
 
 
 
@@ -25,6 +26,7 @@ const About = () => {
           <img width='600px' className="mb-4 mr-20 rounded-lg" src={abir} alt="" />
           <div className="pr-16">
             <h1 className="text-5xl font-bold text-secondary">T AM A WEB DEVELOPER </h1>
+            <h1 className='text-2xl font-bold mt-3'>My Name is Abir Hasan</h1>
             <p className="py-6">
               I am student in class tent. and web developer. i am from ther curess of Education programamer-hero. A lot peopple lrnarn here . I can Javacrript, html, css, bootstrap, tailwindcss, and rect. i want to work as a web developer now
               a id nisi Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -44,7 +46,7 @@ const About = () => {
         img={img1}
       ></Aboutinfo>
       <Aboutinfo
-        bgclass="bg-[#19D3Ae]"
+        bgclass="bg-gradient-to-r from-secondary to-primary"
         cardTitle="contact now"
         cardTitles="0160889768"
         img={img2}
@@ -78,6 +80,7 @@ const About = () => {
   </div>
 </div>
             </div>
+            <Footer></Footer>
        </div>
     );
 };

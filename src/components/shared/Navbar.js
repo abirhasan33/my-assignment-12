@@ -81,17 +81,12 @@ const Navbar = ({ children }) => {
               )}
               <li>
                 <NavLink to='/about' className='rounded-lg'>
-                  About me
+                My Pofile
                 </NavLink>
               </li>
               <li>
                 <NavLink to='/blogs' className='rounded-lg'>
                 Blogs
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to='/contact' className='rounded-lg'>
-                  Contact
                 </NavLink>
               </li>
               <li>{user ? <span className="" onClick={logout}>Sign Out</span> : <NavLink to="/login">Login</NavLink>}</li>
@@ -136,7 +131,7 @@ const Navbar = ({ children }) => {
               )}
           <li>
             <NavLink to='/about' className='rounded-lg'>
-              About
+              My Pofile
             </NavLink>
           </li>
           <li>
@@ -144,11 +139,6 @@ const Navbar = ({ children }) => {
                 Blogs
                 </NavLink>
               </li>
-          <li>
-            <NavLink to='/contact' className='rounded-lg'>
-              Contact
-            </NavLink>
-          </li>
           <li>{user ? <button className="btn btn-ghost" onClick={logout}>Sign Out</button> : <NavLink to="/login">Login</NavLink>}</li>
         </ul>
       </div>

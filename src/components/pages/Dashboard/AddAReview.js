@@ -9,7 +9,7 @@ const AddAReview = () => {
     event.preventDefault();
     // const email=user?.email;
     const email = event.target.email.value;
-    const name = event.target.phone_name.value;
+    const name = event.target.name.value;
     const quantity = event.target.quantity.value;
     const descrription = event.target.descrription.value;
     const img = event.target.img.value;
@@ -25,9 +25,7 @@ const AddAReview = () => {
     };
     console.log(Addproduct);
 
-    const url = `http://localhost:5000/addnewitem`;
-    console.log(url);
-    fetch(url, {
+    fetch('http://localhost:5000/service', {
       method: "POST",
       headers: {
         "content-type": "Application/json",
@@ -42,11 +40,11 @@ const AddAReview = () => {
   return (
     <div className="mt-6">
       <div class="card w-96 bg-base-100 shadow-xl mx-auto">
-        {/* <div class="card-body"> */}
+        <form onSubmit={handelform}>
+        <div class="card-body">
         <h2 class="text-3xl font-bold text-center text-secondary">
           Add Product
         </h2>
-        <form onSubmit={handelform}>
           <input
             type="email"
             name="email"
@@ -94,7 +92,7 @@ const AddAReview = () => {
           <button className="addProduct-btn button bg-slate-500 font-bold text-white py-3 rounded-lg">
             Add Product
           </button>
-          {/* </div> */}
+          </div>
         </form>
       </div>
     </div>
