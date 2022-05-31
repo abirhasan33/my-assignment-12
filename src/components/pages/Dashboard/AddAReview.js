@@ -25,7 +25,7 @@ const AddAReview = () => {
     };
     console.log(Addproduct);
 
-    fetch('https://guarded-refuge-32359.herokuapp.com/service', {
+    fetch(" https://guarded-refuge-32359.herokuapp.com/service", {
       method: "POST",
       headers: {
         "content-type": "Application/json",
@@ -41,57 +41,57 @@ const AddAReview = () => {
     <div className="mt-6">
       <div class="card w-96 bg-base-100 shadow-xl mx-auto">
         <form onSubmit={handelform}>
-        <div class="card-body">
-        <h2 class="text-3xl font-bold text-center text-secondary">
-          Add Product
-        </h2>
-          <input
-            type="email"
-            name="email"
-            readOnly
-            value={user?.email}
-            className="form-control"
-            required
-            class="input input-bordered input-success w-full max-w-xs"
-          />
-          <input
-            type="text"
-            name="name"
-            placeholder="Services Name"
-            class="input input-bordered input-success w-full max-w-xs"
-            required
-          />
-          <input
-            type="text"
-            name="img"
-            placeholder="Type here"
-            class="input input-bordered input-success w-full max-w-xs"
-            required
-          />
-          <input
-            type="text"
-            name="quantity"
-            placeholder="quantity"
-            class="input input-bordered input-success w-full max-w-xs"
-            required
-          />
-          <input
-            type="text"
-            name="price"
-            placeholder="price"
-            class="input input-bordered input-success w-full max-w-xs"
-            required
-          />
-          <input
-            type="text"
-            name="descrription"
-            placeholder="Type descrription"
-            class="input input-bordered input-lg w-full max-w-xs"
-            required
-          />
-          <button className="addProduct-btn button bg-slate-500 font-bold text-white py-3 rounded-lg">
-            Add Product
-          </button>
+          <div class="card-body">
+            <h2 class="text-3xl font-bold text-center text-secondary">
+              Add Product
+            </h2>
+            <input
+              type="email"
+              name="email"
+              readOnly
+              value={user?.email}
+              className="form-control"
+              required
+              class="input input-bordered input-success w-full max-w-xs"
+            />
+            <input
+              type="text"
+              name="name"
+              placeholder="Services Name"
+              class="input input-bordered input-success w-full max-w-xs"
+              required
+            />
+            <input
+              type="text"
+              name="img"
+              placeholder="Type here"
+              class="input input-bordered input-success w-full max-w-xs"
+              required
+            />
+            <input
+              type="text"
+              name="quantity"
+              placeholder="quantity"
+              class="input input-bordered input-success w-full max-w-xs"
+              required
+            />
+            <input
+              type="text"
+              name="price"
+              placeholder="price"
+              class="input input-bordered input-success w-full max-w-xs"
+              required
+            />
+            <input
+              type="text"
+              name="descrription"
+              placeholder="Type descrription"
+              class="input input-bordered input-lg w-full max-w-xs"
+              required
+            />
+            <button className="addProduct-btn button bg-slate-500 font-bold text-white py-3 rounded-lg">
+              Add Product
+            </button>
           </div>
         </form>
       </div>
