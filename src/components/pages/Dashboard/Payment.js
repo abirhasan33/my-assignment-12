@@ -15,7 +15,7 @@ const Payment = () => {
   const [order, setOrder, isLoading] = useState({});
 
   useEffect(() => {
-    fetch(` https://guarded-refuge-32359.herokuapp.com/booking/${id}`, {
+    fetch(`https://guarded-refuge-32359.herokuapp.com/booking/${id}`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -26,7 +26,7 @@ const Payment = () => {
   }, []);
   console.log(order, id);
 
-  // const url = ` https://guarded-refuge-32359.herokuapp.com/booking/${id}`;
+  // const url = `https://guarded-refuge-32359.herokuapp.com/booking/${id}`;
 
   // const {data: order, isLoading} = useQuery(['booking', id], ()=>  fetch(url, {
   //     method: 'GET',

@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Service = ({ services, setOrder }) => {
-  const { _id, name, img, descrription, quantity, price, availableQuantity } = services;
+const Service = ({ service, setOrder }) => {
+  const { _id, name, img, descrription, quantity, price, availableQuantity } = service;
 
   const nevigate = useNavigate();
   const navigetToServiseDetail = (id) => {
@@ -36,7 +36,7 @@ const Service = ({ services, setOrder }) => {
           <div className="card-actions justify-center">
           <label
             for="booking-modal"
-            onClick={() => setOrder(services)}
+            onClick={() => setOrder(service)}
             className="btn px-11 mt-3 btn-primary text-white bg-gradient-to-r from-secondary to-primary"
           >
             place order

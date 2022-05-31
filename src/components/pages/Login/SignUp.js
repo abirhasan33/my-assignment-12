@@ -35,7 +35,7 @@ const SignUp = () => {
     if (user || gUser) {
         console.log(user || gUser);
     }
-    if (token) {
+    if (user || gUser) {
         navigate("/");
       }
 

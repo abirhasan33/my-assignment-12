@@ -25,7 +25,7 @@ const AddAReview = () => {
     };
     console.log(Addproduct);
 
-    fetch(" https://guarded-refuge-32359.herokuapp.com/service", {
+    fetch("https://guarded-refuge-32359.herokuapp.com/service", {
       method: "POST",
       headers: {
         "content-type": "Application/json",

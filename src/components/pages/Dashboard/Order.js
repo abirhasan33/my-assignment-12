@@ -6,7 +6,7 @@ import UserRow from "./UserRow";
 const Order = () => {
   const [users, setUser, isLoading, refetch] = useState([]);
   useEffect(() => {
-    fetch(" https://guarded-refuge-32359.herokuapp.com/user", {
+    fetch("https://guarded-refuge-32359.herokuapp.com/user", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

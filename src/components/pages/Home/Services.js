@@ -4,14 +4,14 @@ import BookingModal from "./BookingModal";
 import Service from "./Service";
 
 const Services = () => {
-  const [services, setServices, refetch] = useState([]);
+  const [services, setServices] = useState([]);
   const [order, setOrder] = useState(null);
 
   useEffect(() => {
-    fetch(" https://guarded-refuge-32359.herokuapp.com/service")
+    fetch("https://guarded-refuge-32359.herokuapp.com/service")
       .then((res) => res.json())
       .then((data) => setServices(data));
-  }, [setServices]);
+  }, [services]);
 
   return (
     <div className="my-16 mx-12">
@@ -19,21 +19,17 @@ const Services = () => {
         <Link to="/masonry">MASONRY TOOLS</Link>
       </h1>
       <div className="grid lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-2 my-20 mx-12  gap-6 ">
-        {services.map((services) => (
+        {services.map((service) => (
           <Service
-            key={services._id}
-            services={services}
+            key={service._id}
+            service={service}
             setOrder={setOrder}
           ></Service>
         ))}
       </div>
       <div>
         {order && (
-          <BookingModal
-            order={order}
-            setOrder={setOrder}
-            refetch={refetch}
-          ></BookingModal>
+          <BookingModal order={order} setOrder={setOrder}></BookingModal>
         )}
       </div>
     </div>

@@ -12,7 +12,7 @@ const AllUsers = () => {
   useEffect(() => {
     if (user) {
       fetch(
-        ` https://guarded-refuge-32359.herokuapp.com/available?patient=${user.email}`,
+        `https://guarded-refuge-32359.herokuapp.com/available?patient=${user.email}`,
         {
           method: "GET",
           headers: {
