@@ -2,7 +2,7 @@
 
 
 
-Live website :  [Create React App](https://assignment-10-51d3e.web.app).
+Live website :  [Create React App](https://assignment-12-7020e.web.app/).
 
 * home pages I am a product, can we services can we provider. && pdet button quantity...
 * AllInventory out pagr all products .

@@ -1,53 +1,81 @@
-import './App.css';
-import { Route, Routes } from 'react-router-dom';
-import Navbar from './components/shared/Navbar';
-import About from './components/pages/About/About';
-import Login from './components/pages/Login/Login';
-import Home from './components/pages/Home/Home';
-import SignUp from './components/pages/Login/SignUp';
-import NotFound from './components/NotFound/NotFound';
-import Blogs from './components/pages/Blogs/Blogs';
-import RequireAuth from './components/pages/Login/ReqireAuth';
-import Dashboard from './components/pages/Dashboard/Dashboard';
-import AddAReview from './components/pages/Dashboard/AddAReview';
-import MyOrders from './components/pages/Dashboard/MyOrders';
-import Inventory from './components/pages/Home/Inventory';
+import Navbar from './Pages/Shared/Navbar';
+import { Routes, Route } from "react-router-dom";
+import Home from './Pages/Home/Home';
+import Purchase from './Pages/Purchase/Purchase';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import AllUsers from './components/pages/Dashboard/AllUsers';
-import Order from './components/pages/Dashboard/Order';
-import Payment from './components/pages/Dashboard/Payment';
+import Login from './Pages/Login/Login';
+import Register from './Pages/Login/Register';
+import RequireAuth from './Pages/RequireAuth/RequireAuth';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import MyOrders from './Pages/Dashboard/MyOrders';
+import AddAReview from './Pages/Dashboard/AddAReview';
+import MyProfile from './Pages/Dashboard/MyProfile';
+import {
+  QueryClient,
+  QueryClientProvider,
+} from 'react-query'
+import Payment from './Pages/Dashboard/Payment';
+import AllUsers from './Pages/Dashboard/AllUsers';
+
+import RequireAdmin from './Pages/Login/RequireAdmin';
+import ManageOrders from './Pages/Dashboard/ManageOrders';
+import AddProduct from './Pages/Dashboard/AddProduct';
+import ManageProduct from './Pages/Dashboard/ManageProduct';
+import NotFound from './Pages/Shared/NotFound';
+import Blogs from './Pages/Blogs/Blogs';
+import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
+import Footer from './Pages/Shared/Footer';
 
 function App() {
+  const queryClient = new QueryClient();
+
   return (
-    <div>
-      <Navbar>
-      <Routes>
-        <Route path='/' element={<Home></Home>}></Route>
-        <Route path='/home' element={<Home></Home>}></Route>
-        <Route path='/about' element={<About></About>}></Route>
-        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
-        <Route path='/login' element={<Login></Login>}></Route>
-        <Route path='/signup' element={<SignUp></SignUp>}></Route>
-        <Route path='/inventory/:serviceId' element={<RequireAuth>
-          <Inventory></Inventory>
-        </RequireAuth>}></Route>
-        <Route path='/deshboard' element={<RequireAuth>
-          <Dashboard></Dashboard>
-        </RequireAuth>}>
-        <Route index element={<AllUsers></AllUsers>}></Route>
-        <Route path='review' element={<AddAReview></AddAReview>}></Route>
-        <Route path='user' element={<Order></Order>}></Route>
-        <Route path='payment/:id' element={<Payment></Payment>}></Route>
-        <Route path='order' element={<MyOrders></MyOrders>}></Route>
-        </Route>
-
-
-        <Route path='*' element={<NotFound></NotFound>}></Route>
-      </Routes>
-      <ToastContainer></ToastContainer>
-      </Navbar>
-    </div>
+    <div >
+      <QueryClientProvider client={queryClient}>
+        <Navbar></Navbar>
+        <div className='max-w-7xl mx-auto'>
+          <Routes>
+            <Route path='/' element={<Home></Home>}></Route>
+            <Route path='/home' element={<Home></Home>}></Route>
+            <Route path='/portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
+            <Route path='/purchase/:productId' element={
+              <RequireAuth>
+                <Purchase></Purchase>
+              </RequireAuth>
+            }></Route>
+            <Route path='/dashboard' element={
+              <RequireAuth>
+                <Dashboard></Dashboard>
+              </RequireAuth>}>
+              {/* <Route index element={<Dashboard></Dashboard>} /> */}
+              <Route path='myOrders' element={<MyOrders></MyOrders>} />
+              <Route path='payment/:id' element={<Payment></Payment>} />
+              <Route path='addAReview' element={<AddAReview></AddAReview>} />
+              <Route path='myProfile' element={<MyProfile></MyProfile>} />
+              <Route path='allUsers' element={<RequireAdmin>
+                <AllUsers></AllUsers>
+              </RequireAdmin>} />
+              <Route path='manageOrders' element={<RequireAdmin>
+                <ManageOrders></ManageOrders>
+              </RequireAdmin>} />
+              <Route path='addProduct' element={<RequireAdmin>
+                <AddProduct></AddProduct>
+              </RequireAdmin>} />
+              <Route path='manageProduct' element={<RequireAdmin>
+                <ManageProduct></ManageProduct>
+              </RequireAdmin>} />
+            </Route>
+            <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+            <Route path='/login' element={<Login></Login>}></Route>
+            <Route path='/register' element={<Register></Register>}></Route>
+            <Route path='*' element={<NotFound></NotFound>}></Route>
+          </Routes>
+        </div>
+        <Footer></Footer>
+        <ToastContainer></ToastContainer>
+      </QueryClientProvider>
+    </div >
   );
 }
 
